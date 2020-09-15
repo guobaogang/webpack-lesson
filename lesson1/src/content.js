@@ -5,4 +5,4 @@ function content() {
 	dom.append(content);
 }
 
-export default header;
+export default content;
