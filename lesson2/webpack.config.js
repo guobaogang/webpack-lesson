@@ -9,14 +9,31 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-			test: /\.(css|less)$/,
-			use: ['style-loader', 'css-loader', "less-loader"]
-		}, {
-			test: /\.jpeg$/,
-			use: [{
-				loader: 'file-loader'
-			}]
-		}]
+				test: /\.(css|less)$/,
+				use: ['style-loader', 'css-loader', "less-loader"]
+			},
+			{
+				test: /\.(jpeg)$/,
+				use: [{
+					loader: 'url-loader',
+					options: {
+						name: '[name]_[hash].[ext]',
+						outputPath: 'images',
+						limit: 20480
+					}
+				}]
+			}
+			/* {
+				test: /\.(jpeg)$/,
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: 'images'
+					}
+				}]
+			} */
+		]
 	}
 	// module: {
 	// 	rules: [{
