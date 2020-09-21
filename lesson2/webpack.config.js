@@ -8,8 +8,7 @@ var webpack = require('webpack');
 module.exports = {
 	mode: 'production',
 	entry: {
-		index: './src/index.js',
-		test: './src/test.js'
+		index: './src/index.js'
 	},
 	output: {
 		filename: '[name].js',
@@ -27,7 +26,18 @@ module.exports = {
 			},
 			{
 				test: /\.(css|less)$/,
-				use: ['style-loader', 'css-loader', "less-loader"]
+				use: ['style-loader', 'css-loader', 'postcss-loader',
+				/* {
+					loader: 'postcss-loader',
+					options: {
+						postcssOptions: {
+							plugins: [
+								require('autoprefixer')
+							],
+						},
+					},
+				}, */
+				 "less-loader"]
 			},
 			{
 				test: /\.(jpeg)$/,

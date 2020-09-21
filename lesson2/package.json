@@ -31,6 +31,14 @@
     "build": "webpack --config webpack.config.js",
     "dev": "webpack-dev-server"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8",
+    "ios >= 8",
+    "android >= 4.0",
+    "ff <= 15"
+  ],
   "author": "",
   "license": "ISC"
 }
