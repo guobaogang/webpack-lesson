@@ -7,12 +7,15 @@ var webpack = require('webpack');
 
 module.exports = {
 	mode: 'production',
-	entry: './src/index.js',
-	devtool: 'source-map',
+	entry: {
+		index: './src/index.js',
+		test: './src/test.js'
+	},
 	output: {
-		filename: 'main.js',
+		filename: '[name].js',
 		path: path.join(__dirname, './dist')
 	},
+	devtool: 'source-map',
 	module: {
 		rules: [{
 				test: /\.js$/,
