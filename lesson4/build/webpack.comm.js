@@ -4,10 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	entry: {
-		index: './src/index.js'
+		'home/index': './src/home/index.js',
+		'detail/index': './src/detail/index.js'
 	},
 	output: {
-		filename: '[name].js',
+		filename: '[name]_[hash:8].js',
+		chunkFilename: 'vendors[chunkhash:8].js',
 		path: path.join(__dirname, '../dist')
 	},
 	devtool: 'source-map',
@@ -66,8 +68,14 @@ module.exports = {
 			filename: '[name].css'
 		}),
 		new HTMLWebpackPlugin({
-			filename: 'index.html',
-			template: './index.html'
+			filename: 'home/index.html',
+			template: './index.html',
+			chunks: ['home/index']
+		}),
+		new HTMLWebpackPlugin({
+			filename: 'detail/index.html',
+			template: './index.html',
+			chunks: ['detail/index']
 		})
 	]
 }

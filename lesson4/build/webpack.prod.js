@@ -9,6 +9,9 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const prodConf = {
 	mode: 'production',
+	externals: {
+		mnt: 'moment'
+	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new OptimizeCssAssetsPlugin()
