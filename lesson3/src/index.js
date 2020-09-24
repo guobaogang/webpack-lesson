@@ -1,7 +1,6 @@
 import {
     square
 } from './math';
-import './index.less';
 
 var dom = document.getElementById('app');
 var header = document.createElement('div');
